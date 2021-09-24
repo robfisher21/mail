@@ -1,0 +1,19 @@
+textarea {
+    min-height: 400px;
+}
+
+#card-add {
+margin-top:10px;
+}
+
+#card-read {
+    margin-top:10px;
+    background-color: lightgray;
+    }
+
+.btn-primary {
+    margin-bottom:10px;
+    clear:both;
+    display:block;
+
+}
