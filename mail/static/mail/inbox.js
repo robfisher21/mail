@@ -1,8 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
 
   // Use buttons to toggle between views
-  document.querySelector('#inbox').addEventListener('click', () => load_mailbox('inbox'));
-  document.querySelector('#sent').addEventListener('click', () => load_mailbox('sent'));
+  document.querySelector('#inbox').addEventListener('click', () => {
+    load_mailbox('inbox');
+    history.pushState('inbox', "",`emails/inbox`);
+
+  });
+  document.querySelector('#sent').addEventListener('click', () => {
+    load_mailbox('sent');
+    history.pushState('sent', "",`emails/sent`);
+  });
   document.querySelector('#archived').addEventListener('click', () => load_mailbox('archive'));
   document.querySelector('#compose').addEventListener('click', compose_email);
 
@@ -148,6 +155,7 @@ function load_mailbox(mailbox) {
 
       // Set Card style for Read email
       if (data.read) {
+        console.log(data.read)
         divCard.setAttribute('id', 'card-read');
       }
 
